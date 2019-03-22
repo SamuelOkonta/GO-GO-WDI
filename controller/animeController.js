@@ -1,1 +1,0 @@
-const Anime = require('../models/Anime.js')
