@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 // First, we instantiate a namespace for our Schema constructor defined by mongoose.
 const Schema = mongoose.Schema;
 
-const SnowboardSchema = new Schema({
+const AnimeSchema = new Schema({
     name: {
-        type: String,
+        genre: String,
+        language: String,
         required: true
     },
     price: {
