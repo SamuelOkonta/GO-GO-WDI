@@ -9,31 +9,23 @@ const AnimeSchema = new Schema({
         language: String,
         required: true
     },
-    price: {
-        type: Number,
-        required: true
-    }
+   
 })
 
-const CompanySchema = new Schema({
+const GenreSchema = new Schema({
     name: {
         type: String,
         required: true,
         unique: true
-    },
-    country: {
-        type: String,
-        required: true
-    },
-    snowboards: [SnowboardSchema]
+    }
 });
 
 // Create models for each schema
-const CompanyModel = mongoose.model('Company', CompanySchema)
-const SnowboardModel = mongoose.model('Snowboard', SnowboardSchema)
+const AnimeModel = mongoose.model('Anime', AnimeSchema)
+const GenreModel = mongoose.model('Genre', GenreSchema)
 
 // Export each model so they can be required elsewhere
 module.exports = {
-    CompanyModel: CompanyModel,
-    SnowboardModel: SnowboardModel
+    AnimeModel: AnimeModel,
+    GenreModel: GenreModel
 }

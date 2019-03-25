@@ -5,7 +5,7 @@ const Anime = new Schema({
     name: String,
     genre: String,
     rating: Number,
-    release: Number,
+    year: Number,
     plot: String
 
     
