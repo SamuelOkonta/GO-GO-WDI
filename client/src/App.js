@@ -18,7 +18,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+           Go Go Wdi
           </a>
         </header>
       </div>
