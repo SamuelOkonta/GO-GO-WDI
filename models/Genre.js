@@ -1,10 +1,5 @@
 const mongoose = require('../db/connection.js')
-const Schema = mongoose.Schema
+const {GenreSchema} = require('../db/Schema')
 
-const Genre = new Schema({
-    type: String,
-    description: String
-    
-})
 
-module.exports = mongoose.model('Genre', Genre)
+module.exports = mongoose.model('Genre', GenreSchema)

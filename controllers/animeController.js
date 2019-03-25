@@ -1,38 +1,20 @@
+
 const Anime = require('../models/Anime.js')
 
-
-const animeController = {
-    index: (req, res) => {
-       
-        res.render('index')
-    },
-    secret: (req, res) => {
-        
-    }
-}
-
-
-module.exports = animeController
-
-
-
-
-// const Creature = require('../models/Creature.js')
-
-// const creatureController = {
+const AnimeController = {
 //     index: async (req, res) => {
 //         try {
-//             const creatures = await Creature.find({})
-//             res.json(creatures)
+//             const Anime = await Anime.find({})
+//             res.json(Anime)
 //         } catch (err) {
 //             console.log(err)
 //         }
 //     },
 //     show: async (req, res) => {
 //         try {
-//             const creatureId = req.params.id
-//             const creature = await Creature.findById(creatureId)
-//             res.json(creature)
+//             const AnimeId = req.params.id
+//             const Anime = await Anime.findById(AnimeId)
+//             res.json(Anime)
 //         } catch (err) {
 //             console.log(err)
 //             res.json(err)
@@ -40,9 +22,9 @@ module.exports = animeController
 //     },
 //     create: async (req, res) => {
 //         try {
-//           const newCreature = req.body
-//           const savedCreature = await Creature.create(newCreature)
-//           res.json(savedCreature)
+//           const newAnime = req.body
+//           const savedAnime = await Anime.create(newAnime)
+//           res.json(savedAnime)
 //         } catch (err) {
 //           console.log(err)
 //           res.status(500).json(err)
@@ -50,10 +32,10 @@ module.exports = animeController
 //     },
 //     update: async (req, res) => {
 //         try {
-//           const creatureId = req.params.id
-//           const updatedCreature = req.body
-//           const savedCreature = await Creature.findByIdAndUpdate(creatureId, updatedCreature, {new: true})
-//           res.json(savedCreature)
+//           const AnimeId = req.params.id
+//           const updatedAnime = req.body
+//           const savedAnime = await Anime.findByIdAndUpdate(AnimeId, updatedAnime, {new: true})
+//           res.json(savedAnime)
 //         } catch (err) {
 //           console.log(err)
 //           res.status(500).json(err)
@@ -62,14 +44,14 @@ module.exports = animeController
 //     delete: async (req, res) => {
 //         console.log('DELETE')
 //         try {
-//           const creatureId = req.params.id
-//           const deletedCreature = await Creature.findByIdAndRemove(creatureId)
-//           res.json(deletedCreature)
+//           const AnimeId = req.params.id
+//           const deletedAnime = await Anime.findByIdAndRemove(AnimeId)
+//           res.json(deletedAnime)
 //         } catch (err) {
 //           console.log(err)
 //           res.status(500).json(err)
 //         }
 //     }
-// }
+}
 
-// module.exports = creatureController
+module.exports = AnimeController

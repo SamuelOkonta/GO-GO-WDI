@@ -10,7 +10,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(`${__dirname}/client/build`))
 
-app.use('/api/v1', routes)
+// app.use('/api/v1', routes)
+
+app.use('/', (req, res) => {
+  res.send('Hello World')
+})
 
 app.get('/*', (req, res) => {
     res.sendFile(`${__dirname}/client/build/index.html`)

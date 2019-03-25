@@ -1,14 +1,6 @@
 const mongoose = require('../db/connection.js')
-const Schema = mongoose.Schema
-
-const Anime = new Schema({
-    name: String,
-    genre: String,
-    rating: Number,
-    year: Number,
-    plot: String
+const {AnimeSchema} = require ('../db/Schema') 
 
     
-})
 
-module.exports = mongoose.model('Anime', Anime)
+module.exports = mongoose.model('Anime', AnimeSchema)
