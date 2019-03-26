@@ -1,5 +1,5 @@
 
-const Genre = require('../models/genreController.js')
+const Genre = require('../models/Genre')
 
 const GenreController = {
     index: async (req, res) => {

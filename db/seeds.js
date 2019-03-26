@@ -48,23 +48,57 @@ const slime = new Anime ({
     name: 'That Time I Got Reincarnated as a Slime',
     language: 'Japanese',
     episodes: 24,
-    genre: [genre1, genre3, genre7]
+    genre: [genre7]
 })
 
 const gundam = new Anime ({
     name: 'Mobile Suit GUNDAM Iron Blooded Orphans',
     language: 'Japanese',
     episodes: 50,
-    genre: [genre2, genre5]
+    genre: [genre2]
 })
 
 const darling = new Anime ({
     name: 'DARLING in the FRANXX',
     language: 'Japanese',
     episodes: 24,
-    genre: [genre8, genre4]
+    genre: [genre8]
 })
 
+const titan = new Anime ({
+    name: 'Attack on Titan',
+    language: 'Japanese',
+    episodes: 49,
+    genre: [genre1]
+})
+
+const chaika = new Anime ({
+    name: 'Chaika -The Coffin Princess',
+    language: 'Japanese',
+    episodes: 22,
+    genre: [genre3]
+})
+
+const count = new Anime ({
+    name: 'Gankutsuou',
+    language: 'Japanese',
+    episodes: 24,
+    genre: [genre5]
+})
+
+const kobe = new Anime ({
+    name: 'Slam Dunk',
+    language: 'Japanese',
+    episodes: 101,
+    genre: [genre4]
+})
+
+const dio = new Anime ({
+    name: 'JoJo\'s Bizarre Adventure',
+    language: 'Japanese',
+    episodes: 135,
+    genre: [genre6]
+})
 
 
 
@@ -73,6 +107,11 @@ Anime.deleteMany()
 .then(() => slime.save())
 .then(() => gundam.save())
 .then(() => darling.save())
+.then(() => titan.save())
+.then(() => chaika.save())
+.then(() => count.save())
+.then(() => kobe.save())
+.then(() => dio.save())
 
 
     
