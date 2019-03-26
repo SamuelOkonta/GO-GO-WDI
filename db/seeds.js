@@ -1,20 +1,78 @@
 const Anime = require('../models/Anime.js')
 const Genre = require('../models/Genre.js')
-  
-// using Promises
-Anime.deleteMany().then(() => {
-    const Inuyasha = new Anime({name: 'Inuyasha', })
-    return Inuyasha.save()
-  }).then(() => {
-    const darth = new Anime({name: 'Darth Vader', })
-    return darth.save()
-  })
+require('dotenv').config()
+const mongoose = require('mongoose')
 
-  Genre.deleteMany().then(() => {
-    const Inuyasha = new Genre({name: 'Inuyasha', })
-    return Inuyasha.save()
-  }).then(() => {
-    const darth = new Genre({name: 'Darth Vader', })
-    return darth.save()
-  })
-  
+if(process.env.MONGODB_URI) {
+    mongoose.connect(process.env.MONGODB_URI)
+} else {
+    mongoose.connect('mongodb://localhost/idea-board')
+}
+
+mongoose.connection.on('error', (err) => {
+    console.error('MongoDB connection error: ', err)
+    process.exit(-1)
+})
+
+mongoose.connection.once('open', () => {
+    console.log("Mongoose has connected to MongoDB")
+})
+
+// using Promises
+ const genre1 = new Genre({
+     name: 'Action'
+ })
+const genre2 = new Genre ({
+    name: 'Mecha'
+})
+const genre3 = new Genre ({
+    name: 'Adventure'
+})
+const genre4 = new Genre ({
+    name: 'Drama'
+})
+const genre5 = new Genre ({
+    name: 'Science Fiction'
+})
+const genre6 = new Genre ({
+    name: "Shounen"
+})
+const genre7 = new Genre ({
+    name: 'Fantasy'
+})
+const genre8 = new Anime ({
+    name: 'Romance'
+})
+
+const slime = new Anime ({
+    name: 'That Time I Got Reincarnated as a Slime',
+    language: 'Japanese',
+    episodes: 24,
+    genre: [genre1, genre3, genre7]
+})
+
+const gundam = new Anime ({
+    name: 'Mobile Suit GUNDAM Iron Blooded Orphans',
+    language: 'Japanese',
+    episodes: 50,
+    genre: [genre2, genre5]
+})
+
+const darling = new Anime ({
+    name: 'DARLING in the FRANXX',
+    language: 'Japanese',
+    episodes: 24,
+    genre: [genre8, genre4]
+})
+
+
+
+
+
+Anime.deleteMany()
+.then(() => slime.save())
+.then(() => gundam.save())
+.then(() => darling.save())
+
+
+    

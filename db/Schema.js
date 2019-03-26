@@ -17,8 +17,12 @@ const AnimeSchema = new Schema({
         required: true
     },
     language: String,
-    year: Number,
+    episodes: Number,
     genre: [GenreSchema]
+    // genres: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'GenreSchema'
+    // }]
    
 })
 
