@@ -1,34 +1,33 @@
-
 const Genre = require('../models/Genre')
 
 const GenreController = {
     index: async (req, res) => {
         try {
-            const Genres = await Genre.find({})
-            res.json(Genres)
+            const GenreAll = await Genre.find({})
+            res.json(GenreAll)
         } catch (err) {
             console.log(err)
         }
     },
-    show: async (req, res) => {
-        try {
-            const GenreId = req.params.id
-            const Genre = await Genre.findById(GenreId)
-            res.json(Genre)
-        } catch (err) {
-            console.log(err)
-            res.json(err)
-        }
-    },
-    create: async (req, res) => {
-        try {
-          const newGenre = req.body
-          const savedGenre = await Genre.create(newGenre)
-          res.json(savedGenre)
-        } catch (err) {
-          console.log(err)
-          res.status(500).json(err)
-        }
+show: (req, res) => {
+  Genre.findById(req.params.genreId).then(genre => {
+    res.json(genre)
+  })
+},
+    // create: async (req, res) => {
+    //     try {
+    //       const newGenre = req.body
+    //       const savedGenre = await Genre.create(newGenre)
+    //       res.json(savedGenre)
+    //     } catch (err) {
+    //       console.log(err)
+    //       res.status(500).json(err)
+    //     }
+    // },
+    create: (req, res) => {
+const newGenre = new Genre(req.body.genre)
+console.log(newGenre)
+newGenre.save()
     },
     update: async (req, res) => {
         try {

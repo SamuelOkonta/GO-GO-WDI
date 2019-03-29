@@ -1,15 +1,5 @@
 const mongoose = require('mongoose');
-
-
 const Schema = mongoose.Schema;
-
-const GenreSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        unique: true
-    }
-});
 
 const AnimeSchema = new Schema({
     name: {
@@ -18,10 +8,18 @@ const AnimeSchema = new Schema({
     },
     language: String,
     episodes: Number,
-    genre: [GenreSchema]
-    
-   
+    image: String,
 })
+
+const GenreSchema = new Schema({
+    genreName: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    anime : [AnimeSchema]
+});
+
 
 
 
