@@ -1,5 +1,6 @@
 
 const Anime = require('../models/Anime.js')
+const Genre = require('../models/Genre.js')
 
 const animeController = {
     index: async (req, res) => {
