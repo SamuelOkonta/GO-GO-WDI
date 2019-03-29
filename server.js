@@ -3,6 +3,7 @@ const logger = require('morgan')
 const app = express()
 const routes = require('./routes/index.js')
 const bodyParser = require ('body-parser')
+const path = require('path')
 
 //require express, logger, app and my routes
 
